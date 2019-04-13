@@ -37,7 +37,6 @@ class NormalMainView: UIViewController {
 extension NormalMainView: NormalMainViewProtocol {
     func showDatas(with datas: [MainEntity]) {
         self.datas = datas
-        print("THIS IS COUNT:", datas.count)
         tableView.reloadData()
     }
 }
