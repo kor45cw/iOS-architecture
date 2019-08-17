@@ -1,8 +1,8 @@
 //
 //  MainPresenter.swift
-//  MVP-Sample
+//  Sample
 //
-//  Created by 손창우 on 04/04/2019.
+//  Created by kor45cw on 04/04/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 

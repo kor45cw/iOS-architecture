@@ -13,8 +13,9 @@
 		A0E1468A2307A343008FD16D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E146892307A343008FD16D /* UIViewController+Extension.swift */; };
 		A0E1468C2307A3B3008FD16D /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1468B2307A3B3008FD16D /* MainProtocols.swift */; };
 		A0E1468E2307A577008FD16D /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1468D2307A577008FD16D /* Array+Extension.swift */; };
+		A0E146912307AA69008FD16D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E146902307AA69008FD16D /* DetailView.swift */; };
+		A0E146932307AAF0008FD16D /* DetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E146922307AAF0008FD16D /* DetailProtocols.swift */; };
 		CE5AF3F0225624FC0009CB02 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AF3EF225624FC0009CB02 /* MainPresenter.swift */; };
-		CECA229E22575B9800F12DE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA229D22575B9800F12DE5 /* DetailViewController.swift */; };
 		CECA22A022575BB300F12DE5 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA229F22575BB300F12DE5 /* DetailPresenter.swift */; };
 		CECA22A222575BBC00F12DE5 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA22A122575BBC00F12DE5 /* DetailService.swift */; };
 		CECA22A52257621100F12DE5 /* MVP_DetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA22A42257621100F12DE5 /* MVP_DetailTest.swift */; };
@@ -48,10 +49,11 @@
 		A0E146892307A343008FD16D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A0E1468B2307A3B3008FD16D /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		A0E1468D2307A577008FD16D /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		A0E146902307AA69008FD16D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A0E146922307AAF0008FD16D /* DetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocols.swift; sourceTree = "<group>"; };
 		A162D1345BE8D0F42FA90740 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09268BA2B3F3DB068496280 /* Pods-MVP-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP-Sample.release.xcconfig"; path = "Target Support Files/Pods-MVP-Sample/Pods-MVP-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		CE5AF3EF225624FC0009CB02 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		CECA229D22575B9800F12DE5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CECA229F22575BB300F12DE5 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		CECA22A122575BBC00F12DE5 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
 		CECA22A42257621100F12DE5 /* MVP_DetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_DetailTest.swift; sourceTree = "<group>"; };
@@ -142,9 +144,10 @@
 		CECA22A322575BC200F12DE5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				CECA229D22575B9800F12DE5 /* DetailViewController.swift */,
+				A0E146902307AA69008FD16D /* DetailView.swift */,
 				CECA229F22575BB300F12DE5 /* DetailPresenter.swift */,
 				CECA22A122575BBC00F12DE5 /* DetailService.swift */,
+				A0E146922307AAF0008FD16D /* DetailProtocols.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -363,14 +366,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E1468E2307A577008FD16D /* Array+Extension.swift in Sources */,
+				A0E146932307AAF0008FD16D /* DetailProtocols.swift in Sources */,
 				CECA22A222575BBC00F12DE5 /* DetailService.swift in Sources */,
 				A0E146882307A2C1008FD16D /* MainView.swift in Sources */,
+				A0E146912307AA69008FD16D /* DetailView.swift in Sources */,
 				A0E1468C2307A3B3008FD16D /* MainProtocols.swift in Sources */,
 				CE5AF3F0225624FC0009CB02 /* MainPresenter.swift in Sources */,
 				CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */,
 				A0E1468A2307A343008FD16D /* UIViewController+Extension.swift in Sources */,
 				CECA22A022575BB300F12DE5 /* DetailPresenter.swift in Sources */,
-				CECA229E22575B9800F12DE5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

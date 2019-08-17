@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail View-->
         <scene sceneID="md6-NR-ctv">
             <objects>
-                <viewController id="GQQ-6n-iBr" customClass="DetailViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailView" id="GQQ-6n-iBr" customClass="DetailView" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pnf-5P-BpX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

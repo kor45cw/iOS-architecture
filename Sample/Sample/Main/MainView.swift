@@ -55,6 +55,7 @@ extension MainView: UITableViewDataSource {
 extension MainView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
+        let detailView = DetailView.instance()
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 }
