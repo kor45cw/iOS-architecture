@@ -15,21 +15,21 @@
 - Eliminate code related to business logic where possible.
 
 ## Presenter
-- 사용자의 행동에 응답하고 UI를 업데이트 하는 것을 포함하는 모든 논리를 담당 (via Delegate)
-- View에 표현되기 위한 규칙을 담당할 수 있다.
-- View에서 수행된 사용자의 동작에 반응, Model에서 Data를 검색하며, View에 표시할 수 있도록 형식을 지정
-- 가장 중요한 것은 UIKit 디팬던시가 없다는 것 -> 따라서 쉽게 테스트 가능하다.
+- Responsible for all logic, including responding to user actions and updating the UI (via Delegate)
+- Can handle the rules to be displayed in the view.
+- Responds to the user's actions performed in the view, retrieves data from the model, and specifies the format to display in the view
+- The most important thing is that there is no UIKit dependency-> so it's easy to test.
 
 ## Model
-- 도메인 데이터를 담당하는 인터페이스입니다 (GUI에서 표시되거나, 다른 방식으로 작동 함).
+- Interface responsible for domain data (visible in GUI)
 
-### 장점
-- MVP는 UIViewController를 멍청하고 수동적이며 덜 거대한 View 구성 요소의 일부로 만듭니다.
-- 비즈니스 논리의 대부분은 캡슐화되어있어 우수한 테스트 가능성을 제공합니다.
-- 모의 객체를 도입하여 도메인 부분을 테스트할 수 있습니다.
-- 분리 된 엔티티는 책임은 명확하게 구분됩니다.
+### Advantages
+- MVP makes UIViewController a part of dumb, passive and less huge View components.
+- Most of the business logic is encapsulated, providing excellent testability.
+- You can test the domain part by introducing mock objects.
+- Detached entities have responsibilities clearly separated.
 
 
-> MVP가 passive view pattern을 사용한다는 것은 중요하다.</br>
-> 이것은 모든 액션이 presenter에게 전달된다는 것을 의미한다.</br>
-> delegate를 사용하여 UI 업데이트를 트리거 하는 기능, 그래서 View는 오로지 presenter에게 이벤트를 넘기고, update를 듣는 행위를 할 것이다.
+> It is important that MVP uses a passive view pattern. </br>
+> This means that all actions are passed to the presenter. </br>
+> The ability to trigger UI updates using delegates, so View will only pass events to the presenter and listen for updates.
