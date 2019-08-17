@@ -16,14 +16,23 @@ enum MainEntity: String, CaseIterable {
     case delete
 }
 
-class MainPresenter {
-    private weak var viewDelegate: MainViewDelegate?
+class MainPresenter: MainPresenterDelegate {
+    weak var view: MainViewDelegate!
     
-    func attachView(view: MainViewDelegate) {
-        self.viewDelegate = view
+    init(view: MainViewDelegate) {
+        self.view = view
     }
     
-    func loadDatas() {
-        viewDelegate?.show(datas: MainEntity.allCases)
+    var numberOfItemsInSection: Int {
+        return MainEntity.allCases.count
+    }
+    
+    subscript(indexPath: IndexPath) -> MainEntity? {
+        guard indexPath.section == 0 else { return nil }
+        return MainEntity.allCases[safe: indexPath.item]
+    }
+    
+    func fetchDatas() {
+        view.loadFinished()
     }
 }

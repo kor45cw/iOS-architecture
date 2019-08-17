@@ -1,19 +1,22 @@
 //
-//  MainViewController.swift
-//  MVP-Sample
+//  MainView.swift
+//  Sample
 //
-//  Created by 손창우 on 02/04/2019.
+//  Created by kor45cw on 17/08/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 
 import UIKit
 
-protocol MainViewDelegate: class {
-    func show(datas: [MainEntity])
-}
-
-class MainViewController: UIViewController {
-
+class MainView: UIViewController {
+    static func instance() -> MainView {
+        let vc: MainView = instance(storyboardName: .main)
+        vc.presenter = MainPresenter(view: vc)
+        return vc
+    }
+    
+    var presenter: MainPresenterDelegate!
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -21,40 +24,35 @@ class MainViewController: UIViewController {
         }
     }
     
-    private var presenter = MainPresenter()
-    private var datas: [MainEntity] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.attachView(view: self)
-        presenter.loadDatas()
+        presenter.fetchDatas()
     }
 }
 
-extension MainViewController: MainViewDelegate {
-    func show(datas: [MainEntity]) {
-        self.datas = datas
+extension MainView: MainViewDelegate {
+    func loadFinished() {
         self.tableView.reloadData()
     }
 }
 
-extension MainViewController: UITableViewDataSource {
+extension MainView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.count
+        return presenter.numberOfItemsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = datas[indexPath.item].rawValue
+        cell.textLabel?.text = presenter[indexPath]?.rawValue
         return cell
     }
 }
 
-extension MainViewController: UITableViewDelegate {
+extension MainView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "toDetail", sender: nil)

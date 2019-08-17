@@ -10,33 +10,43 @@ import XCTest
 @testable import Sample
 
 class MVP_SampleTests: XCTestCase {
-    var mainViewController = MockUIViewController()
-    let presenter = MainPresenter()
+    var mainView: MockMainView!
 
     override func setUp() {
         super.setUp()
-        presenter.attachView(view: mainViewController)
+        mainView = MockMainView()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        super.tearDown()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
     func testMain() {
         // When
-        presenter.loadDatas()
+        mainView.viewDidLoad()
         
         // Then
-        XCTAssertEqual(mainViewController.datas, MainEntity.allCases)
+        XCTAssertEqual(mainView.numberOfItemsInSection, MainEntity.allCases.count)
+    }
+    
+    func testSubscript() {
+        XCTAssertNil(mainView.presenter[IndexPath(row: 0, section: 1)])
+        XCTAssertNil(mainView.presenter[IndexPath(row: 6, section: 0)])
+        XCTAssertEqual(mainView.presenter[IndexPath(row: 0, section: 0)], MainEntity.get)
     }
 }
 
 //there are the mock of UIviewController which using the Presenter
-class MockUIViewController: MainViewDelegate {
-    var datas: [MainEntity] = []
-    func show(datas: [MainEntity]) {
-        self.datas = datas
+class MockMainView: MainViewDelegate {
+    var presenter: MainPresenterDelegate!
+    
+    init() {
+        self.presenter = MainPresenter(view: self)
+    }
+    
+    public func viewDidLoad() {
+        self.presenter.fetchDatas()
+    }
+    
+    var numberOfItemsInSection = 0
+    func loadFinished() {
+        self.numberOfItemsInSection = presenter.numberOfItemsInSection
     }
 }
