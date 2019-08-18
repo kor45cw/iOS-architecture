@@ -12,3 +12,4 @@ Carthage/Build
 
 
 *.xcuserstate
+.DS_Store
