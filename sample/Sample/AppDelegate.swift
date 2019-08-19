@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Viper-Sample
+//  Sample
 //
-//  Created by 손창우 on 26/02/2019.
+//  Created by kor45cw on 26/02/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 

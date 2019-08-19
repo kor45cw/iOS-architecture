@@ -15,7 +15,7 @@ protocol NormalDetailPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func showDetails(for item: MainEntity)
+    func showDetails(for item: MainData)
     var itemCount: Int { get }
     subscript(index: Int) -> Post? { get }
 }

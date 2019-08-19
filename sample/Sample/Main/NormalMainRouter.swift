@@ -9,27 +9,27 @@
 import UIKit
 
 class NormalMainRouter: NormalMainRouterProtocol {
+    weak var view: UIViewController!
+    
+    required init(view: UIViewController) {
+        self.view = view
+    }
+    
     class func createModule() -> UIViewController {
         let view = mainStoryboard.instantiateViewController(withIdentifier: "NormalMainView")
-        if let view = view as? NormalMainView {
-            let presenter: NormalMainPresenterProtocol & NormalMainInteractorOutputProtocol = NormalMainPresenter()
-            let interactor: NormalMainInteractorInputProtocol = NormalMainInteractor()
-//            let localDataManager: PostListLocalDataManagerInputProtocol = PostListLocalDataManager()
-//            let remoteDataManager: PostListRemoteDataManagerInputProtocol = PostListRemoteDataManager()
-            let router: NormalMainRouterProtocol = NormalMainRouter()
-            
-            view.presenter = presenter
-            presenter.view = view
-            presenter.router = router
-            presenter.interactor = interactor
-            interactor.presenter = presenter
-//            interactor.localDatamanager = localDataManager
-//            interactor.remoteDatamanager = remoteDataManager
-//            remoteDataManager.remoteRequestHandler = interactor
-            
-            return view
+        guard let mainView = view as? NormalMainView else {
+            return UIViewController()
         }
-        return UIViewController()
+        let presenter: NormalMainPresenterProtocol & NormalMainInteractorOutputProtocol = NormalMainPresenter()
+        let interactor: NormalMainInteractorInputProtocol = NormalMainInteractor()
+        let router: NormalMainRouterProtocol = NormalMainRouter(view: mainView)
+        
+        mainView.presenter = presenter
+        presenter.view = mainView
+        presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        return mainView
     }
     
     static var mainStoryboard: UIStoryboard {
@@ -37,11 +37,8 @@ class NormalMainRouter: NormalMainRouterProtocol {
     }
     
     
-    func presentPostDetailScreen(from view: NormalMainViewProtocol, for data: MainEntity) {
+    func presentPostDetailScreen(for data: MainData) {
         let viewController = NormalDetailRouter.createModule()
-        
-        if let sourceView = view as? UIViewController {
-            sourceView.navigationController?.pushViewController(viewController, animated: true)
-        }
+        view.navigationController?.pushViewController(viewController, animated: true)
     }
 }

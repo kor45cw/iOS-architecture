@@ -9,39 +9,47 @@
 import UIKit
 
 protocol NormalMainPresenterProtocol: class {
-    var view: NormalMainViewProtocol? { get set }
-    var interactor: NormalMainInteractorInputProtocol? { get set }
-    var router: NormalMainRouterProtocol? { get set }
+    var view: NormalMainViewProtocol! { get set }
+    var interactor: NormalMainInteractorInputProtocol! { get set }
+    var router: NormalMainRouterProtocol! { get set }
 
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func showDetails(for item: MainEntity)
+    
+    var numberOfRowsInSection: Int { get }
+    func cellForRowAt(_ indexPath: IndexPath) -> MainData?
+    func didSelectRowAt(_ indexPath: IndexPath)
 }
 
 protocol NormalMainInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
-    func loadFinished(with datas: [MainEntity])
+    func loadFinished()
     func loadOnError()
 }
 
 protocol NormalMainInteractorInputProtocol: class {
-    var presenter: NormalMainInteractorOutputProtocol? { get set }
+    var presenter: NormalMainInteractorOutputProtocol! { get set }
     // PRESENTER -> INTERACTOR
     func fetchDatas()
+    
+    var datas: [MainData] { get set }
 }
 
-protocol NormalMainViewProtocol {
-    var presenter: NormalMainPresenterProtocol? { get set }
+protocol NormalMainViewProtocol: class {
+    var presenter: NormalMainPresenterProtocol! { get set }
 
     // PRESENTER -> VIEW
-    func showDatas(with datas: [MainEntity])
+    func loadFinished()
 }
 
-protocol NormalMainRouterProtocol {
+protocol NormalMainRouterProtocol: class {
+    var view: UIViewController! { get set }
+    
     static func createModule() -> UIViewController
+    init(view: UIViewController)
 
     // PRESENTER -> Router
-    func presentPostDetailScreen(from view: NormalMainViewProtocol, for data: MainEntity)
+    func presentPostDetailScreen(for data: MainData)
 }
 
 

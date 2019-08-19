@@ -18,7 +18,7 @@ class NormalDetailPresenter: NormalDetailPresenterProtocol {
         interactor?.fetchDatas()
     }
     
-    func showDetails(for item: MainEntity) {
+    func showDetails(for item: MainData) {
         
     }
     

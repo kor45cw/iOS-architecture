@@ -9,16 +9,24 @@
 import UIKit
 
 class NormalMainPresenter: NormalMainPresenterProtocol {
-    var view: NormalMainViewProtocol?
-    var interactor: NormalMainInteractorInputProtocol?
-    var router: NormalMainRouterProtocol?
+    weak var view: NormalMainViewProtocol!
+    var interactor: NormalMainInteractorInputProtocol!
+    var router: NormalMainRouterProtocol!
     
     func viewDidLoad() {
-        interactor?.fetchDatas()
+        interactor.fetchDatas()
     }
     
-    func showDetails(for item: MainEntity) {
-        router?.presentPostDetailScreen(from: view!, for: item)
+    var numberOfRowsInSection: Int {
+        return interactor.datas.count
+    }
+    
+    func cellForRowAt(_ indexPath: IndexPath) -> MainData? {
+        return interactor.datas[indexPath.item]
+    }
+    
+    func didSelectRowAt(_ indexPath: IndexPath) {
+        router.presentPostDetailScreen(for: interactor.datas[indexPath.item])
     }
 }
 
@@ -27,7 +35,7 @@ extension NormalMainPresenter: NormalMainInteractorOutputProtocol {
         // Error
     }
     
-    func loadFinished(with datas: [MainEntity]) {
-        view?.showDatas(with: datas)
+    func loadFinished() {
+        view.loadFinished()
     }
 }

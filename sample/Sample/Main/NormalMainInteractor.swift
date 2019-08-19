@@ -9,10 +9,14 @@
 import UIKit
 
 class NormalMainInteractor: NormalMainInteractorInputProtocol {
-    var presenter: NormalMainInteractorOutputProtocol?
+    weak var presenter: NormalMainInteractorOutputProtocol!
+    
+    var datas: [MainData] = []
     
     func fetchDatas() {
         // Load Data
-        presenter?.loadFinished(with: MainEntity.allCases)
+        self.datas = MainData.allCases
+        print("THIS IS INTERACTOR", self.datas.count)
+        presenter.loadFinished()
     }
 }
