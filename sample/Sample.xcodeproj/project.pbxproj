@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01EAB1C8A4458C08291F0DB6 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B253A12E1CEEFF9A927F515A /* Pods_Sample.framework */; };
+		A0B30423230A8CB800F4D080 /* NormalDetailRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B30422230A8CB800F4D080 /* NormalDetailRemoteDataManager.swift */; };
+		A0B30425230A8F1100F4D080 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B30424230A8F1100F4D080 /* Post.swift */; };
 		A0BD4BCF2309478600F2F8B0 /* MainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD4BCE2309478600F2F8B0 /* MainData.swift */; };
 		CE20EE322224C56E00522506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE312224C56E00522506 /* AppDelegate.swift */; };
 		CE20EE372224C56E00522506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE20EE352224C56E00522506 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		71F3D0005BEA475F5BDFE65F /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		9677D702F4B19F663B025989 /* Pods-Viper-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-Viper-SampleTests/Pods-Viper-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9735F71FF528EBB29829AEB8 /* Pods-Viper-SampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-SampleUITests.release.xcconfig"; path = "Target Support Files/Pods-Viper-SampleUITests/Pods-Viper-SampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A0B30422230A8CB800F4D080 /* NormalDetailRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalDetailRemoteDataManager.swift; sourceTree = "<group>"; };
+		A0B30424230A8F1100F4D080 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A0BD4BCE2309478600F2F8B0 /* MainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainData.swift; sourceTree = "<group>"; };
 		B0B9AE8CF75A98E389F4E526 /* Pods-Viper-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper-SampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Viper-SampleUITests/Pods-Viper-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B253A12E1CEEFF9A927F515A /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,8 +186,10 @@
 				CEFC5225222C9AFF0065EABB /* NormalDetailView.swift */,
 				CEFC5227222C9B120065EABB /* NormalDetailRouter.swift */,
 				CEFC5229222C9B1B0065EABB /* NormalDetailInteractor.swift */,
+				A0B30422230A8CB800F4D080 /* NormalDetailRemoteDataManager.swift */,
 				CEFC522B222C9B230065EABB /* NormalDetailPresenter.swift */,
 				CEFC522D222C9B2E0065EABB /* NormalDetailProtocols.swift */,
+				A0B30424230A8F1100F4D080 /* Post.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -361,7 +367,9 @@
 				CE5D6FFE22291DEF00BA84F8 /* NormalMainInteractor.swift in Sources */,
 				CE5D6FF82229152200BA84F8 /* NormalMainView.swift in Sources */,
 				CE5D700022291E0200BA84F8 /* NormalMainRouter.swift in Sources */,
+				A0B30425230A8F1100F4D080 /* Post.swift in Sources */,
 				A0BD4BCF2309478600F2F8B0 /* MainData.swift in Sources */,
+				A0B30423230A8CB800F4D080 /* NormalDetailRemoteDataManager.swift in Sources */,
 				CEFC5228222C9B120065EABB /* NormalDetailRouter.swift in Sources */,
 				CEFC522C222C9B230065EABB /* NormalDetailPresenter.swift in Sources */,
 				CE20EE322224C56E00522506 /* AppDelegate.swift in Sources */,
@@ -573,7 +581,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y43FZEBEGM;
-				INFOPLIST_FILE = "Viper-SampleTests/Info.plist";
+				INFOPLIST_FILE = SampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,7 +603,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y43FZEBEGM;
-				INFOPLIST_FILE = "Viper-SampleTests/Info.plist";
+				INFOPLIST_FILE = SampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -28,7 +28,7 @@ protocol NormalMainInteractorOutputProtocol: class {
 }
 
 protocol NormalMainInteractorInputProtocol: class {
-    var presenter: NormalMainInteractorOutputProtocol! { get set }
+    var presenter: NormalMainInteractorOutputProtocol? { get set }
     // PRESENTER -> INTERACTOR
     func fetchDatas()
     

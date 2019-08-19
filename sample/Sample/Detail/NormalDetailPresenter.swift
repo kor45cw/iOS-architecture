@@ -1,44 +1,37 @@
 //
 //  NormalDetailPresenter.swift
-//  Viper-Sample
+//  Sample
 //
-//  Created by 손창우 on 04/03/2019.
+//  Created by kor45cw on 04/03/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 
 import Foundation
 
 class NormalDetailPresenter: NormalDetailPresenterProtocol {
-    var view: NormalDetailViewProtocol?
-    var interactor: NormalDetailInteractorInputProtocol?
-    var router: NormalDetailRouterProtocol?
-    var items: [Post]?
+    weak var view: NormalDetailViewProtocol!
+    var interactor: NormalDetailInteractorInputProtocol!
+    var router: NormalDetailRouterProtocol!
     
     func viewDidLoad() {
-        interactor?.fetchDatas()
+        interactor.fetchDatas()
     }
     
-    func showDetails(for item: MainData) {
-        
+    var numberOfRowsInSection: Int {
+        interactor.items.count
     }
     
-    var itemCount: Int {
-        return items?.count ?? 0
-    }
-    
-    subscript(index: Int) -> Post? {
-        guard let items = items, !items.isEmpty && (items.count > index) else { return nil }
-        return items[index]
+    func cellForRowAt(_ indexPath: IndexPath) -> Post? {
+        return interactor.items[indexPath.item]
     }
 }
 
 extension NormalDetailPresenter: NormalDetailInteractorOutputProtocol {
     func loadOnError() {
-        view?.showError()
+        view.showError()
     }
     
-    func loadFinished(_ result: [Post]) {
-        self.items = result
-        view?.updateData()
+    func loadFinished() {
+        view.updateData()
     }
 }

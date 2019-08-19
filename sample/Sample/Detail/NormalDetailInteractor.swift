@@ -1,33 +1,30 @@
 //
 //  NormalDetailInteractor.swift
-//  Viper-Sample
+//  Sample
 //
-//  Created by 손창우 on 04/03/2019.
+//  Created by kor45cw on 04/03/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct Post: Decodable {
-    var userId: Int
-    var id: Int
-    var title: String
-    var body: String
-}
-
 class NormalDetailInteractor: NormalDetailInteractorInputProtocol {
-    var presenter: NormalDetailInteractorOutputProtocol?
+    weak var presenter: NormalDetailInteractorOutputProtocol?
+    var remoteDatamanager: NormalDetailRemoteDataManagerInputProtocol?
+    
+    var items: [Post] = []
     
     func fetchDatas() {
-        let url = URL(string: "http://jsonplaceholder.typicode.com/posts")!
-        AF.request(url, method: .get).validate().responseDecodable { [weak self] (response: DataResponse<[Post]>) in
-            switch response.result {
-            case .success(let value):
-                self?.presenter?.loadFinished(value)
+        remoteDatamanager?.request { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let posts):
+                self.items = posts
+                self.presenter?.loadFinished()
             case .failure(let error):
-                print(error.localizedDescription)
-                self?.presenter?.loadOnError()
+                print("ERROR", error.localizedDescription)
+                self.presenter?.loadOnError()
             }
         }
     }

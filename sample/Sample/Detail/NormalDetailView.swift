@@ -1,8 +1,8 @@
 //
 //  NormalDetailView.swift
-//  Viper-Sample
+//  Sample
 //
-//  Created by 손창우 on 04/03/2019.
+//  Created by kor45cw on 04/03/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 
@@ -17,11 +17,11 @@ class NormalDetailView: UIViewController {
         }
     }
 
-    var presenter: NormalDetailPresenterProtocol?
+    var presenter: NormalDetailPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter.viewDidLoad()
     }
 }
 
@@ -38,12 +38,12 @@ extension NormalDetailView: NormalDetailViewProtocol {
 
 extension NormalDetailView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.itemCount ?? 0
+        return presenter.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
-        cell.textLabel?.text = presenter?[indexPath.item]?.title
+        cell.textLabel?.text = presenter.cellForRowAt(indexPath)?.title
         return cell
     }
 }
