@@ -1,8 +1,8 @@
 //
 //  NormalMainInteractor.swift
-//  Viper-Sample
+//  Sample
 //
-//  Created by 손창우 on 01/03/2019.
+//  Created by kor45cw on 01/03/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ class NormalMainInteractor: NormalMainInteractorInputProtocol {
     func fetchDatas() {
         // Load Data
         self.datas = MainData.allCases
-        print("THIS IS INTERACTOR", self.datas.count)
         presenter.loadFinished()
     }
 }
