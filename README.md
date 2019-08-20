@@ -2,28 +2,29 @@
 
 ![the classic VIPER design pattern diagram](the-classic-VIPER-design-pattern-diagram.png)
 
-## VIPER 구성요소
+## VIPER Component
 - View
-	- 사용자에게 앱 interface를 표시하고 응답을 얻는 코드가 있는 클래스
+	- Class with code to display app interface to user and get response
 - Interactor
-	- 앱의 비즈니스 로직 담당 (주로 API 콜을 담당)
-	- 데이터를 호출할 책임이 있지만 스스로 구현될 필요는 없다. 
-	- 일반적으로 네트워크 작업을 시작하는 것은 인터랙터에 달려 있지만 네트워킹 코드를 직접 처리하지는 않습니다.
+	- Responsible for the business logic of the app (mainly responsible for API calls)
+	- It is responsible for calling data, but it does not have to be implemented on its own.
+	- In general, it's up to the Interactor to start working with the network, but it doesn't handle the networking code directly.
 - Presenter
-	- 핵심
-	- View에서 사용자의 응답을 얻고 그에 따라 작동, 다른 모든 구성요소와 통신한다.
-	- 인터랙터가 반환한 데이터를 가져와서 present를 위해 formatting 하는 것은 Presenter에게 달려있다.
+	- CORE
+	- View gets your response and acts accordingly, communicating with all other components.
+	- It is up to the Presenter to take the data returned by the Interactor and format it for present.
 - Entity
-	- interactor에서 사용하는 모델 클래스, 관련 Manager를 절대 Presenter에 보내지 않는다.
+	- The model class used by the interactor and the related Manager are never sent to the Presenter.
 - Router (WireFrame)
-	- 화면전환, presenter로부터 어떤 화면을 표시하고 실행할지 듣습니다. 
-	- UIWindow, UINavigationController, UIViewController 등을 소유하고 있습니다. 
-	- 뷰/뷰컨트롤러를 작성하고 window에 설치할 책임이 있습니다.
+	- Switch Screens, hear what screens are displayed and run from the presenter.
+	- I own a UIWindow, UINavigationController, UIViewController, etc.
+	- It is responsible for writing the view / view controller and installing it in the window.
 - DataStore
-	- Interactor에 entity를 제공할 책임을 갖는다.
-	- entity의 지속성을 관리한다.
-	- DataManager는 데이터스토어와 인터렉터 사이의 상호작용을 용이하게 하는 것
-		- 인터렉터가 비즈니스 로직에 더 집중할 수 있게 도와준다.
+	- Responsible for providing entities to the Interactor.
+	- Manage the persistence of an entity.
+	- DataManager is to facilitate the interaction between the datastore and the interactor
+		- Helps the interactor focus more on the business logic.
+
 
 ## VIPER 구현의 프로토콜 설명
 - ViewProtocol: Presenter를 통해 UI의 변경 사항을 View에 반영
