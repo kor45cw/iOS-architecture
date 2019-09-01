@@ -36,6 +36,16 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
             tableView.tableFooterView = UIView()
         }
     }
+    
+    func push(viewController: ViewControllable) {
+        self.navigationController?.pushViewController(viewController.uiviewController, animated: true)
+    }
+    
+    func pop(viewController: ViewControllable) {
+        if self.navigationController?.viewControllers.last == viewController.uiviewController {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
 extension MainViewController: UITableViewDataSource {

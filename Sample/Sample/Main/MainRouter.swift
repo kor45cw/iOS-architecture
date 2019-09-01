@@ -14,7 +14,8 @@ protocol MainInteractable: Interactable, NetworkListener {
 }
 
 protocol MainViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+    func push(viewController: ViewControllable)
+    func pop(viewController: ViewControllable)
 }
 
 final class MainRouter: ViewableRouter<MainInteractable, MainViewControllable>, MainRouting {

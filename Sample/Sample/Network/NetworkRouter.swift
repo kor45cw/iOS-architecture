@@ -14,26 +14,43 @@ protocol NetworkInteractable: Interactable {
 }
 
 protocol NetworkViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy. Since
-    // this RIB does not own its own view, this protocol is conformed to by one of this
-    // RIB's ancestor RIBs' view.
+    func push(viewController: ViewControllable)
+    func pop(viewController: ViewControllable)
 }
 
 final class NetworkRouter: Router<NetworkInteractable>, NetworkRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
-    init(interactor: NetworkInteractable, viewController: NetworkViewControllable) {
+    init(interactor: NetworkInteractable,
+         viewController: NetworkViewControllable) {
         self.viewController = viewController
         super.init(interactor: interactor)
         interactor.router = self
     }
 
     func cleanupViews() {
-        // TODO: Since this router does not own its view, it needs to cleanup the views
-        // it may have added to the view hierarchy, when its interactor is deactivated.
+        if let currentChild = currentChild {
+            viewController.pop(viewController: currentChild.viewControllable)
+        }
     }
-
+    
+    func routeToSuccess() {
+        
+    }
+    
+    func routeToFailure() {
+        
+    }
+    
     // MARK: - Private
 
     private let viewController: NetworkViewControllable
+    private var currentChild: ViewableRouting?
+    
+    private func detachCurrentChild() {
+        if let currentChild = currentChild {
+            detachChild(currentChild)
+            viewController.pop(viewController: currentChild.viewControllable)
+        }
+    }
 }
