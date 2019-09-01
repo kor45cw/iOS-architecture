@@ -28,12 +28,10 @@
 		A05FFDB722FAA5D000241086 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDB322FAA5D000241086 /* MainViewController.swift */; };
 		A05FFDB822FAA5D000241086 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDB422FAA5D000241086 /* MainBuilder.swift */; };
 		A05FFDB922FAA5D000241086 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDB522FAA5D000241086 /* MainInteractor.swift */; };
-		CECA22A52257621100F12DE5 /* MVP_DetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA22A42257621100F12DE5 /* MVP_DetailTest.swift */; };
 		CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8BA42252E37A002A6810 /* AppDelegate.swift */; };
 		CECC8BAA2252E37A002A6810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC8BA82252E37A002A6810 /* Main.storyboard */; };
 		CECC8BAC2252E37C002A6810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECC8BAB2252E37C002A6810 /* Assets.xcassets */; };
 		CECC8BAF2252E37C002A6810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC8BAD2252E37C002A6810 /* LaunchScreen.storyboard */; };
-		CECC8BBA2252E37C002A6810 /* MVP_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8BB92252E37C002A6810 /* MVP_SampleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +74,6 @@
 		A05FFDB522FAA5D000241086 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		A162D1345BE8D0F42FA90740 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09268BA2B3F3DB068496280 /* Pods-MVP-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP-Sample.release.xcconfig"; path = "Target Support Files/Pods-MVP-Sample/Pods-MVP-Sample.release.xcconfig"; sourceTree = "<group>"; };
-		CECA22A42257621100F12DE5 /* MVP_DetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_DetailTest.swift; sourceTree = "<group>"; };
 		CECC8BA12252E37A002A6810 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECC8BA42252E37A002A6810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECC8BA92252E37A002A6810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 		CECC8BAE2252E37C002A6810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECC8BB02252E37C002A6810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECC8BB52252E37C002A6810 /* SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CECC8BB92252E37C002A6810 /* MVP_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_SampleTests.swift; sourceTree = "<group>"; };
 		CECC8BBB2252E37C002A6810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7935351A225BA100C31ACFE /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E4FFB1650832E01921F2D5 /* Pods_MVP_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVP_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,8 +216,6 @@
 		CECC8BB82252E37C002A6810 /* SampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				CECC8BB92252E37C002A6810 /* MVP_SampleTests.swift */,
-				CECA22A42257621100F12DE5 /* MVP_DetailTest.swift */,
 				CECC8BBB2252E37C002A6810 /* Info.plist */,
 			);
 			path = SampleTests;
@@ -422,8 +416,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECA22A52257621100F12DE5 /* MVP_DetailTest.swift in Sources */,
-				CECC8BBA2252E37C002A6810 /* MVP_SampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
