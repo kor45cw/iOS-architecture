@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26F8907B7A5A681F13217D44 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739F3B4E267F5C5EE6528E47 /* Pods_SampleTests.framework */; };
 		482AB0930A1D3CAFFE6A4635 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162D1345BE8D0F42FA90740 /* Pods_Sample.framework */; };
+		A02C4E81231BC32C007A3C00 /* RootComponent+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C4E80231BC32C007A3C00 /* RootComponent+Main.swift */; };
 		A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFD9B22FA998800241086 /* AppComponent.swift */; };
 		A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */; };
 		A05FFDAD22FAA01400241086 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA922FAA01400241086 /* RootRouter.swift */; };
@@ -46,6 +47,7 @@
 		94FBE71EE9FEF7C443FEA05E /* Pods_MVP_SampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVP_SampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A241E04F37F01C7919F3530 /* Pods_MVP_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVP_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7BAB142F49A5095091B666 /* Pods-MVP-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MVP-SampleTests/Pods-MVP-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A02C4E80231BC32C007A3C00 /* RootComponent+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+Main.swift"; sourceTree = "<group>"; };
 		A05FFD9B22FA998800241086 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+RIBs.swift"; sourceTree = "<group>"; };
 		A05FFDA922FAA01400241086 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				A05FFDA922FAA01400241086 /* RootRouter.swift */,
 				A05FFDAA22FAA01400241086 /* RootViewController.swift */,
 				A05FFDAB22FAA01400241086 /* RootBuilder.swift */,
+				A02C4E80231BC32C007A3C00 /* RootComponent+Main.swift */,
 				A05FFDAC22FAA01400241086 /* RootInteractor.swift */,
 			);
 			path = Root;
@@ -367,6 +370,7 @@
 				A05FFDB822FAA5D000241086 /* MainBuilder.swift in Sources */,
 				CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */,
 				A05FFDB922FAA5D000241086 /* MainInteractor.swift in Sources */,
+				A02C4E81231BC32C007A3C00 /* RootComponent+Main.swift in Sources */,
 				A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */,
 				A05FFDB722FAA5D000241086 /* MainViewController.swift in Sources */,
 				A05FFDAF22FAA01400241086 /* RootBuilder.swift in Sources */,
