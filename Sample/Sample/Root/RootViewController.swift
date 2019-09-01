@@ -16,7 +16,7 @@ protocol RootPresentableListener: class {
     // interactor class.
 }
 
-final class RootViewController: UIViewController, RootPresentable, RootViewControllable {
+final class RootViewController: UINavigationController, RootPresentable, RootViewControllable {
 
     weak var listener: RootPresentableListener?
     
@@ -28,18 +28,13 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
         fatalError("Method is not supported")
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+    func push(viewController: ViewControllable) {
+        pushViewController(viewController.uiviewController, animated: true)
     }
     
-    func present(viewController: ViewControllable) {
-        present(viewController.uiviewController, animated: true, completion: nil)
-    }
-
-    func dismiss(viewController: ViewControllable) {
-        if presentedViewController === viewController.uiviewController {
-            dismiss(animated: true, completion: nil)
+    func pop(viewController: ViewControllable) {
+        if self.viewControllers.last == viewController.uiviewController {
+            popViewController(animated: true)
         }
     }
 }

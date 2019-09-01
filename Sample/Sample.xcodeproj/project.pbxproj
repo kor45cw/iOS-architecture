@@ -10,6 +10,14 @@
 		26F8907B7A5A681F13217D44 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739F3B4E267F5C5EE6528E47 /* Pods_SampleTests.framework */; };
 		482AB0930A1D3CAFFE6A4635 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162D1345BE8D0F42FA90740 /* Pods_Sample.framework */; };
 		A02C4E81231BC32C007A3C00 /* RootComponent+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C4E80231BC32C007A3C00 /* RootComponent+Main.swift */; };
+		A04DBADA231BCDED0040C9A8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAD9231BCDED0040C9A8 /* UIViewController+Extension.swift */; };
+		A04DBADC231BCF5A0040C9A8 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBADB231BCF5A0040C9A8 /* Reusable.swift */; };
+		A04DBADE231BD2860040C9A8 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBADD231BD2860040C9A8 /* MainEntity.swift */; };
+		A04DBAE1231BD68B0040C9A8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBADF231BD68B0040C9A8 /* MainTableViewCell.swift */; };
+		A04DBAE2231BD68B0040C9A8 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04DBAE0231BD68B0040C9A8 /* MainTableViewCell.xib */; };
+		A04DBAE6231BD9200040C9A8 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAE3231BD9200040C9A8 /* NetworkRouter.swift */; };
+		A04DBAE7231BD9200040C9A8 /* NetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAE4231BD9200040C9A8 /* NetworkBuilder.swift */; };
+		A04DBAE8231BD9200040C9A8 /* NetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAE5231BD9200040C9A8 /* NetworkInteractor.swift */; };
 		A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFD9B22FA998800241086 /* AppComponent.swift */; };
 		A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */; };
 		A05FFDAD22FAA01400241086 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA922FAA01400241086 /* RootRouter.swift */; };
@@ -48,6 +56,14 @@
 		9A241E04F37F01C7919F3530 /* Pods_MVP_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVP_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7BAB142F49A5095091B666 /* Pods-MVP-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MVP-SampleTests/Pods-MVP-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A02C4E80231BC32C007A3C00 /* RootComponent+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+Main.swift"; sourceTree = "<group>"; };
+		A04DBAD9231BCDED0040C9A8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A04DBADB231BCF5A0040C9A8 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		A04DBADD231BD2860040C9A8 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
+		A04DBADF231BD68B0040C9A8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		A04DBAE0231BD68B0040C9A8 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		A04DBAE3231BD9200040C9A8 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		A04DBAE4231BD9200040C9A8 /* NetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilder.swift; sourceTree = "<group>"; };
+		A04DBAE5231BD9200040C9A8 /* NetworkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInteractor.swift; sourceTree = "<group>"; };
 		A05FFD9B22FA998800241086 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+RIBs.swift"; sourceTree = "<group>"; };
 		A05FFDA922FAA01400241086 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
@@ -126,6 +142,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A04DBAE9231BD9250040C9A8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A04DBAE3231BD9200040C9A8 /* NetworkRouter.swift */,
+				A04DBAE4231BD9200040C9A8 /* NetworkBuilder.swift */,
+				A04DBAE5231BD9200040C9A8 /* NetworkInteractor.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		A05FFDB122FAA01800241086 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +169,11 @@
 			children = (
 				A05FFDB222FAA5D000241086 /* MainRouter.swift */,
 				A05FFDB322FAA5D000241086 /* MainViewController.swift */,
+				A04DBADF231BD68B0040C9A8 /* MainTableViewCell.swift */,
+				A04DBAE0231BD68B0040C9A8 /* MainTableViewCell.xib */,
 				A05FFDB422FAA5D000241086 /* MainBuilder.swift */,
 				A05FFDB522FAA5D000241086 /* MainInteractor.swift */,
+				A04DBADD231BD2860040C9A8 /* MainEntity.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -174,6 +203,7 @@
 			children = (
 				CECC8BA42252E37A002A6810 /* AppDelegate.swift */,
 				A05FFD9B22FA998800241086 /* AppComponent.swift */,
+				A04DBAE9231BD9250040C9A8 /* Network */,
 				A05FFDB122FAA01800241086 /* Root */,
 				A05FFDBA22FAA5D300241086 /* Main */,
 				CECC8BA82252E37A002A6810 /* Main.storyboard */,
@@ -181,6 +211,8 @@
 				CECC8BAD2252E37C002A6810 /* LaunchScreen.storyboard */,
 				CECC8BB02252E37C002A6810 /* Info.plist */,
 				A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */,
+				A04DBAD9231BCDED0040C9A8 /* UIViewController+Extension.swift */,
+				A04DBADB231BCF5A0040C9A8 /* Reusable.swift */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -281,6 +313,7 @@
 			files = (
 				CECC8BAF2252E37C002A6810 /* LaunchScreen.storyboard in Resources */,
 				CECC8BAC2252E37C002A6810 /* Assets.xcassets in Resources */,
+				A04DBAE2231BD68B0040C9A8 /* MainTableViewCell.xib in Resources */,
 				CECC8BAA2252E37A002A6810 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,17 +397,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05FFDAD22FAA01400241086 /* RootRouter.swift in Sources */,
+				A04DBADA231BCDED0040C9A8 /* UIViewController+Extension.swift in Sources */,
 				A05FFDB622FAA5D000241086 /* MainRouter.swift in Sources */,
 				A05FFDB022FAA01400241086 /* RootInteractor.swift in Sources */,
+				A04DBAE7231BD9200040C9A8 /* NetworkBuilder.swift in Sources */,
 				A05FFDAE22FAA01400241086 /* RootViewController.swift in Sources */,
 				A05FFDB822FAA5D000241086 /* MainBuilder.swift in Sources */,
+				A04DBADC231BCF5A0040C9A8 /* Reusable.swift in Sources */,
+				A04DBAE8231BD9200040C9A8 /* NetworkInteractor.swift in Sources */,
 				CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */,
 				A05FFDB922FAA5D000241086 /* MainInteractor.swift in Sources */,
 				A02C4E81231BC32C007A3C00 /* RootComponent+Main.swift in Sources */,
+				A04DBAE1231BD68B0040C9A8 /* MainTableViewCell.swift in Sources */,
 				A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */,
 				A05FFDB722FAA5D000241086 /* MainViewController.swift in Sources */,
 				A05FFDAF22FAA01400241086 /* RootBuilder.swift in Sources */,
+				A04DBAE6231BD9200040C9A8 /* NetworkRouter.swift in Sources */,
 				A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */,
+				A04DBADE231BD2860040C9A8 /* MainEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y43FZEBEGM;
+				DEVELOPMENT_TEAM = UQZ9Y78ACS;
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

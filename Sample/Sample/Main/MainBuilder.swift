@@ -13,7 +13,17 @@ protocol MainDependency: Dependency {
     // created by this RIB.
 }
 
-final class MainComponent: Component<MainDependency> {
+final class MainComponent: Component<MainDependency>, NetworkDependency {
+    var networkViewController: NetworkViewControllable {
+        return mainViewController
+    }
+    
+    let mainViewController: MainViewController
+    
+    init(dependency: MainDependency, viewController: MainViewController) {
+        self.mainViewController = viewController
+        super.init(dependency: dependency)
+    }
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -31,10 +41,14 @@ final class MainBuilder: Builder<MainDependency>, MainBuildable {
     }
 
     func build(withListener listener: MainListener) -> MainRouting {
-        let component = MainComponent(dependency: dependency)
-        let viewController = MainViewController()
+        let viewController = MainViewController.instance()
+        let component = MainComponent(dependency: dependency, viewController: viewController)
         let interactor = MainInteractor(presenter: viewController)
         interactor.listener = listener
-        return MainRouter(interactor: interactor, viewController: viewController)
+        
+        let networkBuilder = NetworkBuilder(dependency: component)
+        return MainRouter(interactor: interactor,
+                          viewController: viewController,
+                          networkBuilder: networkBuilder)
     }
 }

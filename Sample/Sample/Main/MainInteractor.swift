@@ -11,6 +11,7 @@ import RxSwift
 
 protocol MainRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToNetwork(type: MainEntity)
 }
 
 protocol MainPresentable: Presentable {
@@ -42,5 +43,9 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func tableView(didSelectRowAt item: MainEntity) {
+        router?.routeToNetwork(type: item)
     }
 }

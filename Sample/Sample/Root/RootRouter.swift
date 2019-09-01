@@ -14,8 +14,8 @@ protocol RootInteractable: Interactable, MainListener {
 }
 
 protocol RootViewControllable: ViewControllable {
-    func present(viewController: ViewControllable)
-    func dismiss(viewController: ViewControllable)
+    func push(viewController: ViewControllable)
+    func pop(viewController: ViewControllable)
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
@@ -26,11 +26,9 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     init(interactor: RootInteractable,
         viewController: RootViewControllable,
         mainBuilder: MainBuildable) {
-        
         self.mainBuilder = mainBuilder
         
         super.init(interactor: interactor, viewController: viewController)
-        
         interactor.router = self
     }
     
@@ -43,6 +41,6 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         let main = mainBuilder.build(withListener: interactor)
         self.main = main
         attachChild(main)
-        viewController.present(viewController: main.viewControllable)
+        viewController.push(viewController: main.viewControllable)
     }
 }

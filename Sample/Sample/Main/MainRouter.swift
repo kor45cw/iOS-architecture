@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol MainInteractable: Interactable {
+protocol MainInteractable: Interactable, NetworkListener {
     var router: MainRouting? { get set }
     var listener: MainListener? { get set }
 }
@@ -20,8 +20,18 @@ protocol MainViewControllable: ViewControllable {
 final class MainRouter: ViewableRouter<MainInteractable, MainViewControllable>, MainRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: MainInteractable, viewController: MainViewControllable) {
+    init(interactor: MainInteractable,
+         viewController: MainViewControllable,
+         networkBuilder: NetworkBuildable) {
+        self.networkBuilder = networkBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
+    
+    func routeToNetwork(type: MainEntity) {
+        let network = networkBuilder.build(withListener: interactor)
+        attachChild(network)
+    }
+    
+    private let networkBuilder: NetworkBuildable
 }
