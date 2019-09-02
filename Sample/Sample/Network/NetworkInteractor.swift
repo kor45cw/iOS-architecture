@@ -8,10 +8,12 @@
 
 import RIBs
 import RxSwift
+import Alamofire
 
 protocol NetworkRouting: Routing {
     func cleanupViews()
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToSuccess(items: [Post])
+    func routeToFailure(error: Error)
 }
 
 protocol NetworkListener: class {
@@ -29,13 +31,31 @@ final class NetworkInteractor: Interactor, NetworkInteractable {
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        // First fail
+        getItems(urlString: "https://jsonplaceholder.typicode.com/po")
     }
 
     override func willResignActive() {
         super.willResignActive()
 
         router?.cleanupViews()
-        // TODO: Pause any business logic.
+    }
+    
+    func getItems(urlString: String) {
+        AF.request(urlString)
+            .validate()
+            .responseDecodable { [weak self] (response: DataResponse<[Post]>) in
+                guard let self = self else { return }
+                switch response.result {
+                case .success(let posts):
+                    self.router?.routeToSuccess(items: posts)
+                case .failure(let error):
+                    self.router?.routeToFailure(error: error)
+                }
+        }
+    }
+    
+    func retry() {
+        getItems(urlString: "https://jsonplaceholder.typicode.com/posts")
     }
 }

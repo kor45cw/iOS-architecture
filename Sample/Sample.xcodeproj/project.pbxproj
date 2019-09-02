@@ -18,6 +18,17 @@
 		A04DBAE6231BD9200040C9A8 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAE3231BD9200040C9A8 /* NetworkRouter.swift */; };
 		A04DBAE7231BD9200040C9A8 /* NetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAE4231BD9200040C9A8 /* NetworkBuilder.swift */; };
 		A04DBAE8231BD9200040C9A8 /* NetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DBAE5231BD9200040C9A8 /* NetworkInteractor.swift */; };
+		A05A5C2F231D2BA400EB3F52 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C2E231D2BA400EB3F52 /* Post.swift */; };
+		A05A5C34231D2BE400EB3F52 /* SuccessRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C30231D2BE400EB3F52 /* SuccessRouter.swift */; };
+		A05A5C35231D2BE400EB3F52 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C31231D2BE400EB3F52 /* SuccessViewController.swift */; };
+		A05A5C36231D2BE400EB3F52 /* SuccessBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C32231D2BE400EB3F52 /* SuccessBuilder.swift */; };
+		A05A5C37231D2BE400EB3F52 /* SuccessInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C33231D2BE400EB3F52 /* SuccessInteractor.swift */; };
+		A05A5C3D231D2BF100EB3F52 /* FailureRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C39231D2BF100EB3F52 /* FailureRouter.swift */; };
+		A05A5C3E231D2BF100EB3F52 /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C3A231D2BF100EB3F52 /* FailureViewController.swift */; };
+		A05A5C3F231D2BF100EB3F52 /* FailureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C3B231D2BF100EB3F52 /* FailureBuilder.swift */; };
+		A05A5C40231D2BF100EB3F52 /* FailureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C3C231D2BF100EB3F52 /* FailureInteractor.swift */; };
+		A05A5C43231D2E2200EB3F52 /* NetworkComponent+Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C42231D2E2200EB3F52 /* NetworkComponent+Success.swift */; };
+		A05A5C45231D2E4000EB3F52 /* NetworkComponent+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C44231D2E4000EB3F52 /* NetworkComponent+Failure.swift */; };
 		A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFD9B22FA998800241086 /* AppComponent.swift */; };
 		A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */; };
 		A05FFDAD22FAA01400241086 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA922FAA01400241086 /* RootRouter.swift */; };
@@ -62,6 +73,17 @@
 		A04DBAE3231BD9200040C9A8 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		A04DBAE4231BD9200040C9A8 /* NetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilder.swift; sourceTree = "<group>"; };
 		A04DBAE5231BD9200040C9A8 /* NetworkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInteractor.swift; sourceTree = "<group>"; };
+		A05A5C2E231D2BA400EB3F52 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A05A5C30231D2BE400EB3F52 /* SuccessRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRouter.swift; sourceTree = "<group>"; };
+		A05A5C31231D2BE400EB3F52 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		A05A5C32231D2BE400EB3F52 /* SuccessBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessBuilder.swift; sourceTree = "<group>"; };
+		A05A5C33231D2BE400EB3F52 /* SuccessInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInteractor.swift; sourceTree = "<group>"; };
+		A05A5C39231D2BF100EB3F52 /* FailureRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureRouter.swift; sourceTree = "<group>"; };
+		A05A5C3A231D2BF100EB3F52 /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
+		A05A5C3B231D2BF100EB3F52 /* FailureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureBuilder.swift; sourceTree = "<group>"; };
+		A05A5C3C231D2BF100EB3F52 /* FailureInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureInteractor.swift; sourceTree = "<group>"; };
+		A05A5C42231D2E2200EB3F52 /* NetworkComponent+Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkComponent+Success.swift"; sourceTree = "<group>"; };
+		A05A5C44231D2E4000EB3F52 /* NetworkComponent+Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkComponent+Failure.swift"; sourceTree = "<group>"; };
 		A05FFD9B22FA998800241086 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+RIBs.swift"; sourceTree = "<group>"; };
 		A05FFDA922FAA01400241086 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
@@ -144,8 +166,32 @@
 				A04DBAE3231BD9200040C9A8 /* NetworkRouter.swift */,
 				A04DBAE4231BD9200040C9A8 /* NetworkBuilder.swift */,
 				A04DBAE5231BD9200040C9A8 /* NetworkInteractor.swift */,
+				A05A5C42231D2E2200EB3F52 /* NetworkComponent+Success.swift */,
+				A05A5C44231D2E4000EB3F52 /* NetworkComponent+Failure.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A05A5C38231D2BE700EB3F52 /* Success */ = {
+			isa = PBXGroup;
+			children = (
+				A05A5C30231D2BE400EB3F52 /* SuccessRouter.swift */,
+				A05A5C31231D2BE400EB3F52 /* SuccessViewController.swift */,
+				A05A5C32231D2BE400EB3F52 /* SuccessBuilder.swift */,
+				A05A5C33231D2BE400EB3F52 /* SuccessInteractor.swift */,
+			);
+			path = Success;
+			sourceTree = "<group>";
+		};
+		A05A5C41231D2BF500EB3F52 /* Failure */ = {
+			isa = PBXGroup;
+			children = (
+				A05A5C39231D2BF100EB3F52 /* FailureRouter.swift */,
+				A05A5C3A231D2BF100EB3F52 /* FailureViewController.swift */,
+				A05A5C3B231D2BF100EB3F52 /* FailureBuilder.swift */,
+				A05A5C3C231D2BF100EB3F52 /* FailureInteractor.swift */,
+			);
+			path = Failure;
 			sourceTree = "<group>";
 		};
 		A05FFDB122FAA01800241086 /* Root */ = {
@@ -199,6 +245,9 @@
 			children = (
 				CECC8BA42252E37A002A6810 /* AppDelegate.swift */,
 				A05FFD9B22FA998800241086 /* AppComponent.swift */,
+				A05A5C2E231D2BA400EB3F52 /* Post.swift */,
+				A05A5C41231D2BF500EB3F52 /* Failure */,
+				A05A5C38231D2BE700EB3F52 /* Success */,
 				A04DBAE9231BD9250040C9A8 /* Network */,
 				A05FFDB122FAA01800241086 /* Root */,
 				A05FFDBA22FAA5D300241086 /* Main */,
@@ -390,25 +439,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05A5C3F231D2BF100EB3F52 /* FailureBuilder.swift in Sources */,
 				A05FFDAD22FAA01400241086 /* RootRouter.swift in Sources */,
 				A04DBADA231BCDED0040C9A8 /* UIViewController+Extension.swift in Sources */,
 				A05FFDB622FAA5D000241086 /* MainRouter.swift in Sources */,
+				A05A5C3E231D2BF100EB3F52 /* FailureViewController.swift in Sources */,
 				A05FFDB022FAA01400241086 /* RootInteractor.swift in Sources */,
+				A05A5C3D231D2BF100EB3F52 /* FailureRouter.swift in Sources */,
 				A04DBAE7231BD9200040C9A8 /* NetworkBuilder.swift in Sources */,
 				A05FFDAE22FAA01400241086 /* RootViewController.swift in Sources */,
 				A05FFDB822FAA5D000241086 /* MainBuilder.swift in Sources */,
 				A04DBADC231BCF5A0040C9A8 /* Reusable.swift in Sources */,
 				A04DBAE8231BD9200040C9A8 /* NetworkInteractor.swift in Sources */,
+				A05A5C34231D2BE400EB3F52 /* SuccessRouter.swift in Sources */,
 				CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */,
+				A05A5C43231D2E2200EB3F52 /* NetworkComponent+Success.swift in Sources */,
 				A05FFDB922FAA5D000241086 /* MainInteractor.swift in Sources */,
 				A02C4E81231BC32C007A3C00 /* RootComponent+Main.swift in Sources */,
+				A05A5C45231D2E4000EB3F52 /* NetworkComponent+Failure.swift in Sources */,
 				A04DBAE1231BD68B0040C9A8 /* MainTableViewCell.swift in Sources */,
+				A05A5C37231D2BE400EB3F52 /* SuccessInteractor.swift in Sources */,
+				A05A5C35231D2BE400EB3F52 /* SuccessViewController.swift in Sources */,
 				A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */,
 				A05FFDB722FAA5D000241086 /* MainViewController.swift in Sources */,
 				A05FFDAF22FAA01400241086 /* RootBuilder.swift in Sources */,
 				A04DBAE6231BD9200040C9A8 /* NetworkRouter.swift in Sources */,
 				A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */,
 				A04DBADE231BD2860040C9A8 /* MainEntity.swift in Sources */,
+				A05A5C40231D2BF100EB3F52 /* FailureInteractor.swift in Sources */,
+				A05A5C2F231D2BA400EB3F52 /* Post.swift in Sources */,
+				A05A5C36231D2BE400EB3F52 /* SuccessBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

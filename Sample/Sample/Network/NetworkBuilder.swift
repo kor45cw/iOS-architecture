@@ -41,6 +41,13 @@ final class NetworkBuilder: Builder<NetworkDependency>, NetworkBuildable {
         let component = NetworkComponent(dependency: dependency)
         let interactor = NetworkInteractor()
         interactor.listener = listener
-        return NetworkRouter(interactor: interactor, viewController: component.networkViewController)
+        
+        let successBuilder = SuccessBuilder(dependency: component)
+        let failureBuilder = FailureBuilder(dependency: component)
+        
+        return NetworkRouter(interactor: interactor,
+                             viewController: component.networkViewController,
+                             successBuilder: successBuilder,
+                             failureBuilder: failureBuilder)
     }
 }

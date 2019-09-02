@@ -7,8 +7,9 @@ target 'Sample' do
   use_frameworks!
 
   # Pods for Sample
-  pod 'Alamofire', '~> 5.0.0-beta.3'
+  pod 'Alamofire', '~> 5.0.0-beta.7'
   pod 'RIBs'
+  pod 'RxCocoa'
 
   target 'SampleTests' do
     inherit! :search_paths

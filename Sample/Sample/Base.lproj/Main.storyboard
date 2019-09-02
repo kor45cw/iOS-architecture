@@ -59,10 +59,55 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Failure View Controller-->
+        <scene sceneID="i0k-Jb-Kq8">
+            <objects>
+                <viewController storyboardIdentifier="FailureViewController" id="BUb-pn-6N1" customClass="FailureViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cHM-R8-Oha">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="7Hz-SL-bci">
+                                <rect key="frame" x="16" y="411" width="382" height="74.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmS-j2-iL9">
+                                        <rect key="frame" x="170" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AV3-9t-fTm">
+                                        <rect key="frame" x="168" y="44.5" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retry:" destination="BUb-pn-6N1" eventType="touchUpInside" id="7cM-Z2-Dre"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rUe-KU-ZXV" firstAttribute="trailing" secondItem="7Hz-SL-bci" secondAttribute="trailing" constant="16" id="0mB-bZ-mzQ"/>
+                            <constraint firstItem="7Hz-SL-bci" firstAttribute="leading" secondItem="rUe-KU-ZXV" secondAttribute="leading" constant="16" id="1D2-90-Sae"/>
+                            <constraint firstItem="7Hz-SL-bci" firstAttribute="centerX" secondItem="cHM-R8-Oha" secondAttribute="centerX" id="Px5-C9-tc0"/>
+                            <constraint firstItem="7Hz-SL-bci" firstAttribute="centerY" secondItem="cHM-R8-Oha" secondAttribute="centerY" id="lUE-aF-GzW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rUe-KU-ZXV"/>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="gmS-j2-iL9" id="wBp-GK-uOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eqa-It-WLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1949" y="468"/>
+        </scene>
+        <!--Success View Controller-->
         <scene sceneID="md6-NR-ctv">
             <objects>
-                <viewController id="GQQ-6n-iBr" customClass="DetailViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuccessViewController" id="GQQ-6n-iBr" customClass="SuccessViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pnf-5P-BpX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,13 +145,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soc-vE-bKt"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="SIx-6J-eEW" id="a1v-od-1y8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5E-OF-Nw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892.753623188406" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1939" y="-212"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uGx-5D-fkZ">

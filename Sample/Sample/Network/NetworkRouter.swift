@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol NetworkInteractable: Interactable {
+protocol NetworkInteractable: Interactable, SuccessListener, FailureListener {
     var router: NetworkRouting? { get set }
     var listener: NetworkListener? { get set }
 }
@@ -22,8 +22,12 @@ final class NetworkRouter: Router<NetworkInteractable>, NetworkRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: NetworkInteractable,
-         viewController: NetworkViewControllable) {
+         viewController: NetworkViewControllable,
+         successBuilder: SuccessBuildable,
+         failureBuilder: FailureBuildable) {
         self.viewController = viewController
+        self.successBuilder = successBuilder
+        self.failureBuilder = failureBuilder
         super.init(interactor: interactor)
         interactor.router = self
     }
@@ -34,17 +38,27 @@ final class NetworkRouter: Router<NetworkInteractable>, NetworkRouting {
         }
     }
     
-    func routeToSuccess() {
-        
+    func routeToSuccess(items: [Post]) {
+        detachCurrentChild()
+        let success = successBuilder.build(withListener: interactor)
+        currentChild = success
+        attachChild(success)
+        viewController.push(viewController: success.viewControllable)
     }
     
-    func routeToFailure() {
-        
+    func routeToFailure(error: Error) {
+        detachCurrentChild()
+        let failure = failureBuilder.build(withListener: interactor, error: error)
+        currentChild = failure
+        attachChild(failure)
+        viewController.push(viewController: failure.viewControllable)
     }
     
     // MARK: - Private
 
     private let viewController: NetworkViewControllable
+    private let successBuilder: SuccessBuildable
+    private let failureBuilder: FailureBuildable
     private var currentChild: ViewableRouting?
     
     private func detachCurrentChild() {
