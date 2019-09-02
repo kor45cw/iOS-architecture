@@ -15,7 +15,7 @@ protocol SuccessRouting: ViewableRouting {
 
 protocol SuccessPresentable: Presentable {
     var listener: SuccessPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func set(_ count: Int)
 }
 
 protocol SuccessListener: class {
@@ -29,18 +29,30 @@ final class SuccessInteractor: PresentableInteractor<SuccessPresentable>, Succes
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: SuccessPresentable) {
+    init(presenter: SuccessPresentable,
+         retryStream: RetryStream) {
+        self.retryStream = retryStream
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        self.update()
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    // MARK: - Private
+    private let retryStream: RetryStream
+    
+    private func update() {
+        retryStream.retryCount
+            .subscribe(onNext: { count in
+                self.presenter.set(count)
+            }).disposeOnDeactivate(interactor: self)
     }
 }

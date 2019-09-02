@@ -9,5 +9,7 @@
 import RIBs
 
 extension NetworkComponent: SuccessDependency {
-    
+    var retryStream: RetryStream {
+        return mutableRetryStream
+    }
 }

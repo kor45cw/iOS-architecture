@@ -29,6 +29,7 @@
 		A05A5C40231D2BF100EB3F52 /* FailureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C3C231D2BF100EB3F52 /* FailureInteractor.swift */; };
 		A05A5C43231D2E2200EB3F52 /* NetworkComponent+Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C42231D2E2200EB3F52 /* NetworkComponent+Success.swift */; };
 		A05A5C45231D2E4000EB3F52 /* NetworkComponent+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C44231D2E4000EB3F52 /* NetworkComponent+Failure.swift */; };
+		A05A5C47231D399800EB3F52 /* RetryStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05A5C46231D399800EB3F52 /* RetryStream.swift */; };
 		A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFD9B22FA998800241086 /* AppComponent.swift */; };
 		A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */; };
 		A05FFDAD22FAA01400241086 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDA922FAA01400241086 /* RootRouter.swift */; };
@@ -84,6 +85,7 @@
 		A05A5C3C231D2BF100EB3F52 /* FailureInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureInteractor.swift; sourceTree = "<group>"; };
 		A05A5C42231D2E2200EB3F52 /* NetworkComponent+Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkComponent+Success.swift"; sourceTree = "<group>"; };
 		A05A5C44231D2E4000EB3F52 /* NetworkComponent+Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkComponent+Failure.swift"; sourceTree = "<group>"; };
+		A05A5C46231D399800EB3F52 /* RetryStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryStream.swift; sourceTree = "<group>"; };
 		A05FFD9B22FA998800241086 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+RIBs.swift"; sourceTree = "<group>"; };
 		A05FFDA922FAA01400241086 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				CECC8BA42252E37A002A6810 /* AppDelegate.swift */,
 				A05FFD9B22FA998800241086 /* AppComponent.swift */,
 				A05A5C2E231D2BA400EB3F52 /* Post.swift */,
+				A05A5C46231D399800EB3F52 /* RetryStream.swift */,
 				A05A5C41231D2BF500EB3F52 /* Failure */,
 				A05A5C38231D2BE700EB3F52 /* Success */,
 				A04DBAE9231BD9250040C9A8 /* Network */,
@@ -450,6 +453,7 @@
 				A05FFDAE22FAA01400241086 /* RootViewController.swift in Sources */,
 				A05FFDB822FAA5D000241086 /* MainBuilder.swift in Sources */,
 				A04DBADC231BCF5A0040C9A8 /* Reusable.swift in Sources */,
+				A05A5C47231D399800EB3F52 /* RetryStream.swift in Sources */,
 				A04DBAE8231BD9200040C9A8 /* NetworkInteractor.swift in Sources */,
 				A05A5C34231D2BE400EB3F52 /* SuccessRouter.swift in Sources */,
 				CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */,

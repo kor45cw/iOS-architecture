@@ -40,7 +40,7 @@ final class NetworkRouter: Router<NetworkInteractable>, NetworkRouting {
     
     func routeToSuccess(items: [Post]) {
         detachCurrentChild()
-        let success = successBuilder.build(withListener: interactor)
+        let success = successBuilder.build(withListener: interactor, items: items)
         currentChild = success
         attachChild(success)
         viewController.push(viewController: success.viewControllable)

@@ -27,7 +27,10 @@ final class NetworkInteractor: Interactor, NetworkInteractable {
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init() {}
+    init(mutableRetryStream: MutableRetryStream) {
+        self.mutableRetryStream = mutableRetryStream
+        super.init()
+    }
 
     override func didBecomeActive() {
         super.didBecomeActive()
@@ -56,6 +59,11 @@ final class NetworkInteractor: Interactor, NetworkInteractable {
     }
     
     func retry() {
+        mutableRetryStream.increase()
         getItems(urlString: "https://jsonplaceholder.typicode.com/posts")
     }
+    
+    
+    // MARK: - Private
+    private let mutableRetryStream: MutableRetryStream
 }

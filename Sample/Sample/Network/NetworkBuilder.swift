@@ -22,7 +22,9 @@ final class NetworkComponent: Component<NetworkDependency> {
         return dependency.networkViewController
     }
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var mutableRetryStream: MutableRetryStream {
+        return shared { RetryStreamImpl() }
+    }
 }
 
 // MARK: - Builder
@@ -39,7 +41,7 @@ final class NetworkBuilder: Builder<NetworkDependency>, NetworkBuildable {
 
     func build(withListener listener: NetworkListener) -> NetworkRouting {
         let component = NetworkComponent(dependency: dependency)
-        let interactor = NetworkInteractor()
+        let interactor = NetworkInteractor(mutableRetryStream: component.mutableRetryStream)
         interactor.listener = listener
         
         let successBuilder = SuccessBuilder(dependency: component)
