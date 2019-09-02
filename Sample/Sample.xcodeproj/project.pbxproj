@@ -196,6 +196,25 @@
 			path = Failure;
 			sourceTree = "<group>";
 		};
+		A05A5C48231D475200EB3F52 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */,
+				A04DBAD9231BCDED0040C9A8 /* UIViewController+Extension.swift */,
+				A04DBADB231BCF5A0040C9A8 /* Reusable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A05A5C49231D475F00EB3F52 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A05A5C2E231D2BA400EB3F52 /* Post.swift */,
+				A05A5C46231D399800EB3F52 /* RetryStream.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A05FFDB122FAA01800241086 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,20 +266,17 @@
 			children = (
 				CECC8BA42252E37A002A6810 /* AppDelegate.swift */,
 				A05FFD9B22FA998800241086 /* AppComponent.swift */,
-				A05A5C2E231D2BA400EB3F52 /* Post.swift */,
-				A05A5C46231D399800EB3F52 /* RetryStream.swift */,
+				A05A5C49231D475F00EB3F52 /* Data */,
 				A05A5C41231D2BF500EB3F52 /* Failure */,
 				A05A5C38231D2BE700EB3F52 /* Success */,
 				A04DBAE9231BD9250040C9A8 /* Network */,
 				A05FFDB122FAA01800241086 /* Root */,
 				A05FFDBA22FAA5D300241086 /* Main */,
+				A05A5C48231D475200EB3F52 /* Utils */,
 				CECC8BA82252E37A002A6810 /* Main.storyboard */,
 				CECC8BAB2252E37C002A6810 /* Assets.xcassets */,
 				CECC8BAD2252E37C002A6810 /* LaunchScreen.storyboard */,
 				CECC8BB02252E37C002A6810 /* Info.plist */,
-				A05FFDA722FA9E9000241086 /* UINavigation+RIBs.swift */,
-				A04DBAD9231BCDED0040C9A8 /* UIViewController+Extension.swift */,
-				A04DBADB231BCF5A0040C9A8 /* Reusable.swift */,
 			);
 			path = Sample;
 			sourceTree = "<group>";

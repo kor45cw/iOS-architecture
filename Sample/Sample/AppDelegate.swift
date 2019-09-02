@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MVP-Sample
+//  Sample
 //
 //  Created by Son Chang Woo on 02/04/2019.
 //  Copyright © 2019 kor45cw. All rights reserved.
