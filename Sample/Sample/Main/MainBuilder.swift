@@ -31,7 +31,7 @@ final class MainComponent: Component<MainDependency>, NetworkDependency {
 // MARK: - Builder
 
 protocol MainBuildable: Buildable {
-    func build(withListener listener: MainListener) -> MainRouting
+    func build(withListener listener: MainListener) -> (router: MainRouting, item: MainActionableItem)
 }
 
 final class MainBuilder: Builder<MainDependency>, MainBuildable {
@@ -40,15 +40,16 @@ final class MainBuilder: Builder<MainDependency>, MainBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: MainListener) -> MainRouting {
+    func build(withListener listener: MainListener) -> (router: MainRouting, item: MainActionableItem) {
         let viewController = MainViewController.instance()
         let component = MainComponent(dependency: dependency, viewController: viewController)
         let interactor = MainInteractor(presenter: viewController)
         interactor.listener = listener
         
         let networkBuilder = NetworkBuilder(dependency: component)
-        return MainRouter(interactor: interactor,
+        let router = MainRouter(interactor: interactor,
                           viewController: viewController,
                           networkBuilder: networkBuilder)
+        return (router, interactor)
     }
 }

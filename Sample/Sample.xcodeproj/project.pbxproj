@@ -40,6 +40,10 @@
 		A05FFDB722FAA5D000241086 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDB322FAA5D000241086 /* MainViewController.swift */; };
 		A05FFDB822FAA5D000241086 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDB422FAA5D000241086 /* MainBuilder.swift */; };
 		A05FFDB922FAA5D000241086 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFDB522FAA5D000241086 /* MainInteractor.swift */; };
+		A0F7211C2328C3CB003AE122 /* RootActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7211B2328C3CB003AE122 /* RootActionableItem.swift */; };
+		A0F7211E2328C42B003AE122 /* MainWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7211D2328C42B003AE122 /* MainWorkflow.swift */; };
+		A0F721202328CDAE003AE122 /* SampleShortcutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7211F2328CDAE003AE122 /* SampleShortcutItem.swift */; };
+		A0F721222328E3CB003AE122 /* MainActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F721212328E3CB003AE122 /* MainActionableItem.swift */; };
 		CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8BA42252E37A002A6810 /* AppDelegate.swift */; };
 		CECC8BAA2252E37A002A6810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC8BA82252E37A002A6810 /* Main.storyboard */; };
 		CECC8BAC2252E37C002A6810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECC8BAB2252E37C002A6810 /* Assets.xcassets */; };
@@ -96,6 +100,10 @@
 		A05FFDB322FAA5D000241086 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A05FFDB422FAA5D000241086 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		A05FFDB522FAA5D000241086 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		A0F7211B2328C3CB003AE122 /* RootActionableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootActionableItem.swift; sourceTree = "<group>"; };
+		A0F7211D2328C42B003AE122 /* MainWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkflow.swift; sourceTree = "<group>"; };
+		A0F7211F2328CDAE003AE122 /* SampleShortcutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleShortcutItem.swift; sourceTree = "<group>"; };
+		A0F721212328E3CB003AE122 /* MainActionableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActionableItem.swift; sourceTree = "<group>"; };
 		A162D1345BE8D0F42FA90740 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09268BA2B3F3DB068496280 /* Pods-MVP-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP-Sample.release.xcconfig"; path = "Target Support Files/Pods-MVP-Sample/Pods-MVP-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		CECC8BA12252E37A002A6810 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +249,16 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A0F721252328E74E003AE122 /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				A0F7211D2328C42B003AE122 /* MainWorkflow.swift */,
+				A0F7211B2328C3CB003AE122 /* RootActionableItem.swift */,
+				A0F721212328E3CB003AE122 /* MainActionableItem.swift */,
+			);
+			path = Workflow;
+			sourceTree = "<group>";
+		};
 		CECC8B982252E37A002A6810 = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				CECC8BA42252E37A002A6810 /* AppDelegate.swift */,
+				A0F7211F2328CDAE003AE122 /* SampleShortcutItem.swift */,
 				A05FFD9B22FA998800241086 /* AppComponent.swift */,
+				A0F721252328E74E003AE122 /* Workflow */,
 				A05A5C49231D475F00EB3F52 /* Data */,
 				A05A5C41231D2BF500EB3F52 /* Failure */,
 				A05A5C38231D2BE700EB3F52 /* Success */,
@@ -474,16 +494,20 @@
 				A05A5C34231D2BE400EB3F52 /* SuccessRouter.swift in Sources */,
 				CECC8BA52252E37A002A6810 /* AppDelegate.swift in Sources */,
 				A05A5C43231D2E2200EB3F52 /* NetworkComponent+Success.swift in Sources */,
+				A0F721222328E3CB003AE122 /* MainActionableItem.swift in Sources */,
 				A05FFDB922FAA5D000241086 /* MainInteractor.swift in Sources */,
 				A02C4E81231BC32C007A3C00 /* RootComponent+Main.swift in Sources */,
 				A05A5C45231D2E4000EB3F52 /* NetworkComponent+Failure.swift in Sources */,
 				A04DBAE1231BD68B0040C9A8 /* MainTableViewCell.swift in Sources */,
+				A0F7211E2328C42B003AE122 /* MainWorkflow.swift in Sources */,
 				A05A5C37231D2BE400EB3F52 /* SuccessInteractor.swift in Sources */,
 				A05A5C35231D2BE400EB3F52 /* SuccessViewController.swift in Sources */,
 				A05FFDA822FA9E9000241086 /* UINavigation+RIBs.swift in Sources */,
 				A05FFDB722FAA5D000241086 /* MainViewController.swift in Sources */,
+				A0F7211C2328C3CB003AE122 /* RootActionableItem.swift in Sources */,
 				A05FFDAF22FAA01400241086 /* RootBuilder.swift in Sources */,
 				A04DBAE6231BD9200040C9A8 /* NetworkRouter.swift in Sources */,
+				A0F721202328CDAE003AE122 /* SampleShortcutItem.swift in Sources */,
 				A05FFD9C22FA998800241086 /* AppComponent.swift in Sources */,
 				A04DBADE231BD2860040C9A8 /* MainEntity.swift in Sources */,
 				A05A5C40231D2BF100EB3F52 /* FailureInteractor.swift in Sources */,

@@ -10,7 +10,7 @@ import RIBs
 import RxSwift
 
 protocol RootRouting: ViewableRouting {
-    func routeToMain()
+    func routeToMain() -> MainActionableItem
 }
 
 protocol RootPresentable: Presentable {
@@ -22,7 +22,8 @@ protocol RootListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
+final class RootInteractor: PresentableInteractor<RootPresentable>,
+                            RootInteractable, RootPresentableListener, RootActionableItem, ShortcutHandler {
 
     weak var router: RootRouting?
     weak var listener: RootListener?
@@ -36,11 +37,36 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        let mainItem = router?.routeToMain()
+        if let mainItem = mainItem {
+            loggedInActionableItemSubject.onNext(mainItem)
+        }
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    
+    
+    // MARK: - ShortcutHandler
+    func application(performActionFor shortcutItem: UIApplicationShortcutItem) {
+        let workflow = MainWorkflow(shortcutItem: shortcutItem)
+        workflow
+            .subscribe(self)
+            .disposeOnDeactivate(interactor: self)
+    }
+
+    // MARK: - RootActionableItem
+
+    func waitForMain(item:  (entity: MainEntity, status: Bool)) -> Observable<(MainActionableItem, (entity: MainEntity, status: Bool))> {
+        return loggedInActionableItemSubject.map { mainItem -> (MainActionableItem, (entity: MainEntity, status: Bool )) in
+            (mainItem, item)
+        }
+    }
+
+    // MARK: - Private
+
+    private let loggedInActionableItemSubject = ReplaySubject<MainActionableItem>.create(bufferSize: 1)
 }

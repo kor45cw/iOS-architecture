@@ -19,7 +19,6 @@ protocol RootViewControllable: ViewControllable {
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
-
     private let mainBuilder: MainBuildable
     private var main: ViewableRouting?
     
@@ -34,13 +33,13 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     
     override func didLoad() {
         super.didLoad()
-        routeToMain()
     }
     
-    func routeToMain() {
+    func routeToMain() -> MainActionableItem {
         let main = mainBuilder.build(withListener: interactor)
-        self.main = main
-        attachChild(main)
-        viewController.push(viewController: main.viewControllable)
+        self.main = main.router
+        attachChild(main.router)
+        viewController.push(viewController: main.router.viewControllable)
+        return main.item
     }
 }

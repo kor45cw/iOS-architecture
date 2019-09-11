@@ -23,7 +23,8 @@ protocol MainListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteractable, MainPresentableListener {
+final class MainInteractor: PresentableInteractor<MainPresentable>,
+                        MainInteractable, MainPresentableListener, MainActionableItem {
 
     weak var router: MainRouting?
     weak var listener: MainListener?
@@ -48,4 +49,10 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     func tableView(didSelectRowAt item: MainEntity) {
         router?.routeToNetwork(type: item)
     }
+    
+    func waitForNetwork(item: (entity: MainEntity, status: Bool)) -> Observable<(MainActionableItem, ())> {
+        router?.routeToNetwork(type: item.entity)
+        return Observable.just((self, ()))
+    }
+    
 }
