@@ -15,6 +15,7 @@ This project hosts each sample app in separate repository branches. For more inf
 | ------------- | ------------- |
 | [MVP](https://github.com/kor45cw/ios-architecture/tree/mvp/) | Demonstrates a basic [Model‑View‑Presenter](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) (MVP) architecture and provides a foundation on which the other samples are built. This sample also acts as a reference point for comparing and contrasting the other samples in this project. |
 | [VIPER](https://github.com/kor45cw/ios-architecture/tree/viper/) | VIPER is an application of [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to iOS apps. [Objc.io Article](https://www.objc.io/issues/13-architecture/viper/). |
+| [RIBs](https://github.com/kor45cw/ios-architecture/tree/RIBs/) | RIBs is Uber's cross-platform mobile architecture framework. [Uber's RIBs Git Repo](https://github.com/uber/RIBs). |
 
 
 ## Choose a sample for your app
