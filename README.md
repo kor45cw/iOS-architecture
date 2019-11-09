@@ -1,5 +1,7 @@
 # iOS Architecture Blueprints
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fkor45cw%2FiOS-architecture)](https://hits.seeyoufarm.com)
+
 The iOS framework provides a lot of flexibility in deciding how to organize and <em>architect</em> an iOS app. While this freedom is very valuable, it can also lead to apps with large classes, inconsistent naming schemes, as well as mismatching or missing architectures. These types of issues can make testing, maintaining and extending your apps difficult.
 
 The iOS Architecture Blueprints project demonstrates strategies to help solve or avoid these common problems. This project implements the same app using different architectural concepts and tools.
